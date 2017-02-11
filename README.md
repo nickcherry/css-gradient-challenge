@@ -2,7 +2,8 @@
 
 Build a simple CSS Gradient Generator in ~45 minutes.
 
-__[Development Video](https://www.dropbox.com/s/cxdesvmgmu7sine/gradients.mov?dl=0)
+__[Development Video](https://www.dropbox.com/s/cxdesvmgmu7sine/gradients.mov?dl=0)__
+
 __[Live Demo](https://css-gradients-challenge.herokuapp.com/)__
 
 > The half-baked mission, should you choose to accept it, is as follows:
