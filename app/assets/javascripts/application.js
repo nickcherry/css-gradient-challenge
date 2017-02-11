@@ -3,9 +3,8 @@
 //= require angular
 //= require lodash
 
-angular.module('Gradients', [])
-
-.controller('GradientsController', function($http, $interval, $scope) {
+const deps = ['$http', '$interval', '$scope'];
+const handler = function($http, $interval, $scope) {
 
   $scope.sessionId = new Date().getTime() + '_' + Math.round(Math.random() * 99999999999);
 
@@ -65,4 +64,6 @@ angular.module('Gradients', [])
   $scope.$evalAsync(function() {
     $scope.$watch('gradient', update, true);
   });
-});
+};
+
+angular.module('Gradients', []).controller('GradientsController', deps.concat(handler));
