@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'angularjs-rails', '~> 1.6.1'
-gem 'babel-schmooze-sprockets', '~> 0.1.3'
 gem 'mongoid', '~> 6.1.0'
 gem 'lodash-rails', '~> 4.17.4'
 gem 'jquery-rails'

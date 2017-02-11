@@ -3,7 +3,9 @@
 //= require angular
 //= require lodash
 
-angular.module('Gradients', []).controller('GradientsController', ($http, $interval, $scope) => {
+angular.module('Gradients', [])
+
+.controller('GradientsController', function($http, $interval, $scope) {
 
   $scope.sessionId = new Date().getTime() + '_' + Math.round(Math.random() * 99999999999);
 
@@ -16,7 +18,7 @@ angular.module('Gradients', []).controller('GradientsController', ($http, $inter
 
   $scope.gradient = Object.assign({}, defaults);
 
-  const isDefault = () => {
+  const isDefault = function() {
     if (defaults.direction !== $scope.gradient.direction) return false;
     if (defaults.end !== $scope.gradient.end) return false;
     if (defaults.start !== $scope.gradient.start) return false;
@@ -24,13 +26,13 @@ angular.module('Gradients', []).controller('GradientsController', ($http, $inter
     return true;
   }
 
-  const fetchRecent = () => {
+  const fetchRecent = function() {
     $http({
       url: '/api/gradients',
       params: {
         session_id: $scope.sessionId,
       }
-    }).then((response) => {
+    }).then(function(response) {
       $scope.recentGradients = response.data;
     });
   };
@@ -38,7 +40,7 @@ angular.module('Gradients', []).controller('GradientsController', ($http, $inter
   fetchRecent();
   $interval(fetchRecent, 5000);
 
-  const save = _.throttle(() => {
+  const save = _.throttle(function() {
     if (!isDefault()) {
       $http({
         method: 'POST',
@@ -51,12 +53,12 @@ angular.module('Gradients', []).controller('GradientsController', ($http, $inter
     }
   }, 500, { leading: false, trailing: true });
 
-  const update = () => {
+  const update = function() {
     $scope.gradient.code = `-webkit-${ $scope.gradient.style }-gradient(${ $scope.gradient.direction }, ${ $scope.gradient.start }, ${ $scope.gradient.end })`;
     save();
   };
 
-  $scope.$evalAsync(() => {
+  $scope.$evalAsync(function() {
     $scope.$watch('gradient', update, true);
   });
 });
