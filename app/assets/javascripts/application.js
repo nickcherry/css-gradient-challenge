@@ -37,7 +37,7 @@ const handler = function($http, $interval, $scope) {
   };
 
   fetchRecent();
-  $interval(fetchRecent, 5000);
+  $interval(fetchRecent, 2000);
 
   const save = _.throttle(function() {
     if (!isDefault()) {
