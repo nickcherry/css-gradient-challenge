@@ -54,7 +54,11 @@ angular.module('Gradients', [])
   }, 500, { leading: false, trailing: true });
 
   const update = function() {
-    $scope.gradient.code = `-webkit-${ $scope.gradient.style }-gradient(${ $scope.gradient.direction }, ${ $scope.gradient.start }, ${ $scope.gradient.end })`;
+    $scope.gradient.code = '-webkit-' + $scope.gradient.style +
+      '-gradient(' + $scope.gradient.direction +
+      ', ' + $scope.gradient.start +
+      ', ' + $scope.gradient.end +
+      ')';
     save();
   };
 
