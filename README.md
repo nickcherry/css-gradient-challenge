@@ -1,6 +1,6 @@
 # CSS Gradient Challenge
 
-Build a simple CSS Gradient Generator in ~45 minutes.
+Build a simple CSS Gradient Generator in ~45 minutes. __[Demo](https://css-gradients-challenge.herokuapp.com/)__
 
 > The half-baked mission, should you choose to accept it, is as follows:
 >
