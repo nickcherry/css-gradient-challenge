@@ -1,0 +1,72 @@
+<div class="gradients" ng-controller="GradientsController">
+  <h1>Gradients</h1>
+
+  <div class="editor">
+    <div class="gradient">
+      <div class="preview" ng-style="{ background: gradient.code }"></div>
+      <pre><code ng-bind="gradient.code"></code></pre>
+    </div>
+    <div class="control style">
+      <h3>Style</h3>
+      <div class="option">
+        <input type="radio" ng-model="gradient.style" value="linear" id="linear" />
+        <label for="linear">Linear</label>
+      </div>
+      <div class="option">
+        <input type="radio" ng-model="gradient.style" value="radial" id="radial" />
+        <label for="radial">Radial</label>
+      </div>
+    </div>
+    <div class="control direction">
+      <h3>Direction</h3>
+      <div class="option">
+        <input type="radio" ng-model="gradient.direction" value="top" id="top" />
+        <label for="top">Top</label>
+      </div>
+      <div class="option">
+        <input type="radio" ng-model="gradient.direction" value="top right" id="top-right" />
+        <label for="top-right">Top-Right</label>
+      </div>
+      <div class="option">
+        <input type="radio" ng-model="gradient.direction" value="right" id="right" />
+        <label for="right">Right</label>
+      </div>
+      <div class="option">
+        <input type="radio" ng-model="gradient.direction" value="bottom right" id="bottom-right" />
+        <label for="bottom-right">Bottom-Right</label>
+      </div>
+      <div class="option">
+        <input type="radio" ng-model="gradient.direction" value="bottom" id="bottom" />
+        <label for="bottom">Bottom</label>
+      </div>
+      <div class="option">
+        <input type="radio" ng-model="gradient.direction" value="bottom left" id="bottom-left" />
+        <label for="bottom-left">Bottom-Left</label>
+      </div>
+      <div class="option">
+        <input type="radio" ng-model="gradient.direction" value="left" id="left" />
+        <label for="left">Left</label>
+      </div>
+      <div class="option">
+        <input type="radio" ng-model="gradient.direction" value="top left" id="top-left" />
+        <label for="top-left">Top-Left</label>
+      </div>
+    </div>
+    <div class="control colors">
+      <h3>Colors</h3>
+      <div class="option">
+        <label for="start">Start:</label>
+        <input type="color" ng-model="gradient.start" id="start" />
+      </div>
+      <div class="option">
+        <label for="end">End:</label>
+        <input type="color" ng-model="gradient.end" id="end" />
+      </div>
+    </div>
+  </div>
+  <div class="recent">
+    <div class="gradient" ng-repeat="gradient in recentGradients">
+      <div class="preview" ng-style="{ background: gradient.code }"></div>
+    </div>
+  </div>
+</div>
